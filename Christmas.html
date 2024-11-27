@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодняя открытка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Фоновое видео -->
+    <video id="background-video" autoplay loop muted>
+        <source src="mp4/Ghristmas.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <!-- Аудио -->
+    <audio id="background-music" autoplay loop preload="auto">
+        <source src="mp3/" type="audio/mp3">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <div class="greeting-container">
+        <div class="greeting">С Новым Годом!</div>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        const greetings = [
+            "С Новым годом! Пусть он будет ярким и счастливым!",
+            "Желаю здоровья, успеха и тепла в новом году!",
+            "Пусть сбудутся мечты и рядом будут близкие!",
+            "Счастья, здоровья и благополучия вам и вашим близким!",
+            "Пусть Новый год принесет радость, улыбки и удачу!",
+            "Светлых дней, добра и мира в новом году!"
+        ];
+
+        function showRandomGreeting() {
+            const messageElement = document.getElementById('message');
+            const randomIndex = Math.floor(Math.random() * greetings.length);
+            messageElement.innerText = greetings[randomIndex];
+        }
+
+        // Показать случайное поздравление
+        showRandomGreeting();
+
+        // Принудительное воспроизведение аудио
+        window.onload = function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log("Автозапуск заблокирован. Нужное взаимодействие пользователя.");
+            });
+        };
+    </script>
+</body>
+</html>

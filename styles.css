@@ -1,0 +1,1221 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Анимации снега и звезд */
+@keyframes snowflakes {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(100vh); }
+}
+
+@keyframes starrySky {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowingText {
+    0% { text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347; }
+    100% { text-shadow: 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 120px #ff6347; }
+}
+
+/* Фоновая анимация */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('starry-sky.png') repeat;
+    animation: starrySky 10s ease-in-out infinite;
+}
+
+.snowflakes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('snowflakes.png') repeat;
+    animation: snowflakes 8s linear infinite;
+    z-index: 1;
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Таймер */
+.countdown-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    text-align: center;
+    color: #f4e6a1;
+    animation: fadeIn 3s ease-out;
+}
+
+/* Контейнер для сообщений */
+.user-message-container {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.user-message {
+    width: 80%;
+    height: 150px;
+    padding: 15px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    color: #333;
+    animation: fadeIn 2s ease-out;
+}
+
+.submit-message {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-message:hover {
+    background-color: #ff5a5f;
+}
+
+/* Секретный блок */
+.secret-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 3;
+    text-align: center;
+}
+
+.secret-button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.secret-button:hover {
+    background-color: #ff5a5f;
+}
+
+/* Управление музыкой */
+.controls {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index: 2;
+}
+
+.music-toggle, .animation-toggle {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.music-toggle:hover, .animation-toggle:hover {
+    background-color: #ff5a5f;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 50px;
+    }
+
+    .message {
+        font-size: 22px;
+    }
+
+    .user-message {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .countdown-container {
+        font-size: 30px;
+    }
+}
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Анимации снега и звезд */
+@keyframes snowflakes {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(100vh); }
+}
+
+@keyframes starrySky {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowingText {
+    0% { text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347; }
+    100% { text-shadow: 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 120px #ff6347; }
+}
+
+/* Фоновая анимация */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('starry-sky.png') repeat;
+    animation: starrySky 10s ease-in-out infinite;
+}
+
+.snowflakes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('snowflakes.png') repeat;
+    animation: snowflakes 8s linear infinite;
+    z-index: 1;
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Таймер */
+.countdown-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    text-align: center;
+    color: #f4e6a1;
+    animation: fadeIn 3s ease-out;
+}
+
+/* Секретный блок */
+.secret-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 3;
+    text-align: center;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Анимации снега и звезд */
+@keyframes snowflakes {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(100vh); }
+}
+
+@keyframes starrySky {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowingText {
+    0% { text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347; }
+    100% { text-shadow: 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 120px #ff6347; }
+}
+
+/* Фоновая анимация */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('starry-sky.png') repeat;
+    animation: starrySky 10s ease-in-out infinite;
+}
+
+.snowflakes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('snowflakes.png') repeat;
+    animation: snowflakes 8s linear infinite;
+    z-index: 1;
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Таймер */
+.countdown-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    text-align: center;
+    color: #f4e6a1;
+    animation: fadeIn 3s ease-out;
+}
+
+/* Секретный блок */
+.secret-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 3;
+    text-align: center;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 50px;
+    }
+
+    .message {
+        font-size: 22px;
+    }
+
+    .countdown-container {
+        font-size: 30px;
+    }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 50px;
+    }
+
+    .message {
+        font-size: 22px;
+    }
+
+    .countdown-container {
+        font-size: 30px;
+    }
+}
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Анимации снежинок и звезд */
+@keyframes snowflakes {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(100vh); }
+}
+
+@keyframes starrySky {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowingBackground {
+    0% { background-color: #1f2a44; }
+    50% { background-color: #14203c; }
+    100% { background-color: #1f2a44; }
+}
+
+/* Фон с анимацией */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #1f2a44;
+    animation: glowingBackground 10s ease-in-out infinite;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 20%, rgba(0, 0, 0, 0.8) 80%);
+    background-size: 10px 10px;
+    animation: starrySky 20s ease-in-out infinite;
+}
+
+.snowflakes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('snowflakes.png') repeat;
+    animation: snowflakes 8s linear infinite;
+    z-index: 1;
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Таймер */
+.countdown-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    text-align: center;
+    color: #f4e6a1;
+    animation: fadeIn 3s ease-out;
+}
+
+/* Секретный блок */
+.secret-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 3;
+    text-align: center;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 50px;
+    }
+
+    .message {
+        font-size: 22px;
+    }
+
+    .countdown-container {
+        font-size: 30px;
+    }
+}
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Видео на фоне */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Видео покрывает весь экран */
+    z-index: -1; /* Видео находится на заднем плане */
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Таймер */
+.countdown-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    text-align: center;
+    color: #f4e6a1;
+    animation: fadeIn 3s ease-out;
+}
+
+/* Секретный блок */
+.secret-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 3;
+    text-align: center;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Анимация текста */
+@keyframes glowingText {
+    0% { text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347; }
+    100% { text-shadow: 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 120px #ff6347; }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 50px;
+    }
+
+    .message {
+        font-size: 22px;
+    }
+
+    .countdown-container {
+        font-size: 30px;
+    }
+}
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Видео на фоне */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Видео покрывает весь экран */
+    z-index: -1; /* Видео находится на заднем плане */
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Таймер */
+.countdown-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    text-align: center;
+    color: #f4e6a1;
+    animation: fadeIn 3s ease-out;
+}
+
+/* Секретный блок */
+.secret-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 3;
+    text-align: center;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Анимация текста */
+@keyframes glowingText {
+    0% { text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347; }
+    100% { text-shadow: 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 120px #ff6347; }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 50px;
+    }
+
+    .message {
+        font-size: 22px;
+    }
+
+    .countdown-container {
+        font-size: 30px;
+    }
+}
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Видео на фоне */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Анимация текста */
+@keyframes glowingText {
+    0% { text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347; }
+    100% { text-shadow: 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 120px #ff6347; }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    body {
+        background-color: #14203c;
+    }
+
+    .greeting {
+        font-size: 50px;
+        text-shadow: 0 0 20px #ff6347, 0 0 40px #ff6347, 0 0 60px #ff6347;
+    }
+
+    .message {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .countdown-container {
+        font-size: 25px;
+    }
+
+    #background-video {
+        object-fit: cover;
+        opacity: 0.8;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .greeting {
+        font-size: 60px;
+        text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    }
+
+    .message {
+        font-size: 25px;
+    }
+
+    .countdown-container {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .greeting {
+        font-size: 70px;
+        text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    }
+
+    .message {
+        font-size: 30px;
+    }
+
+    .countdown-container {
+        font-size: 40px;
+    }
+
+    #background-video {
+        object-fit: cover;
+        opacity: 1;
+    }
+}
+ /* Общие стили */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Видео на фоне */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Анимация текста */
+@keyframes glowingText {
+    0% { text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347; }
+    100% { text-shadow: 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 120px #ff6347; }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    body {
+        background-color: #14203c;
+    }
+
+    .greeting {
+        font-size: 50px;
+        text-shadow: 0 0 20px #ff6347, 0 0 40px #ff6347, 0 0 60px #ff6347;
+    }
+
+    .message {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .countdown-container {
+        font-size: 25px;
+    }
+
+    #background-video {
+        object-fit: cover;
+        opacity: 0.8;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .greeting {
+        font-size: 60px;
+        text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    }
+
+    .message {
+        font-size: 25px;
+    }
+
+    .countdown-container {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .greeting {
+        font-size: 70px;
+        text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    }
+
+    .message {
+        font-size: 30px;
+    }
+
+    .countdown-container {
+        font-size: 40px;
+    }
+
+    #background-video {
+        object-fit: cover;
+        opacity: 1;
+    }
+}/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f2a44;
+    font-family: 'Verdana', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Видео на фоне */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Контейнер для поздравлений */
+.greeting-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+.greeting {
+    font-size: 70px;
+    color: #f4e6a1;
+    text-shadow: 0 0 25px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+    animation: glowingText 3s infinite alternate;
+}
+
+.message {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Анимация текста */
+@keyframes glowingText {
+    0% { text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347; }
+    100% { text-shadow: 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 120px #ff6347; }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    body {
+        background-color: #14203c;
+    }
+
+    .greeting {
+        font-size: 50px;
+        text-shadow: 0 0 20px #ff6347, 0 0 40px #ff6347, 0 0 60px #ff6347;
+    }
+
+    .message {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .countdown-container {
+        font-size: 25px;
+    }
+
+    #background-video {
+        object-fit: cover;
+        opacity: 0.8;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .greeting {
+        font-size: 60px;
+        text-shadow: 0 0 30px #ff6347, 0 0 60px #ff6347, 0 0 90px #ff6347;
+    }
+
+    .message {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.greeting-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.greeting {
+    font-size: 60px;
+    text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347;
+    animation: glow 2s infinite alternate;
+}
+
+.message {
+    font-size: 24px;
+    margin-top: 20px;
+    text-shadow: 0 0 5px #ffdd99, 0 0 10px #ffdd99;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff4500;
+    }
+    to {
+        text-shadow: 0 0 20px #ff4500, 0 0 30px #ff6347, 0 0 40px #ff6347;
+    }
+}
